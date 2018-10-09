@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cuestionario</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    div{float:left;}
+    .pdfobject-container { height: 620px;width:60%;}
+    .pdfobject { border: 1px solid #666; }
+    #answers{width: 40%;}
+</style>
+</head>
+<body>
+<div id="example1"></div>
+<div id="answers">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf2mVcd7ZKK6jw5q33uhpmt-jhOLZB3laSLu7Vhlgt8YbImpA/viewform?embedded=true" width="99%" height="620" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+</div>
+<script src="pdfobject.js"></script>
+<script>PDFObject.embed("Examen UAM CBI.pdf", "#example1");</script>
+<!--
+https://pdfobject.com/
+
+Were you trying to find the Embed HTML code for the New Google Forms? If so, you could try the following:
+1-Open the form.
+2-On the top right, click Send.
+3-At the top of the window, click the Embed icon .
+4-To copy the HTML that appears, click Copy.
+5-Paste the HTML into your website or blog.
+-->
+</body>
+</html>
