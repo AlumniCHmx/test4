@@ -4,18 +4,45 @@
 <title>Cuestionario</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    div{float:left;}
-    .pdfobject-container { height: 620px;width:60%;}
-    .pdfobject { border: 1px solid #666; }
-    #answers{width: 40%;}
-</style>
+ <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div id="example1"></div>
-<div id="answers">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf2mVcd7ZKK6jw5q33uhpmt-jhOLZB3laSLu7Vhlgt8YbImpA/viewform?embedded=true" width="99%" height="620" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-</div>
+<section>
+    <div class="blurred-box">
+        <div class="user-login-box">
+            <span class="user-icon" id="CBI"></span>
+            <div class="user-name">CBI</div>
+            
+        </div>
+    </div>
+    <div class="blurred-box">
+        <div class="user-login-box">
+            <span class="user-icon" id="CBS"></span>
+            <div class="user-name">CBS</div>
+            
+        </div>
+    </div>
+    <div class="blurred-box">
+        <div class="user-login-box">
+            <span class="user-icon" id="CSH"></span>
+            <div class="user-name">CSH</div>
+            
+        </div>
+    </div>
+    <div class="blurred-box">
+        <div class="user-login-box">
+            <span class="user-icon" id="CAD"></span>
+            <div class="user-name">CAD</div>
+            
+        </div>
+    </div>
+</section>
+<section id="content">
+    <div id="example1"></div>
+    <div id="answers">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf2mVcd7ZKK6jw5q33uhpmt-jhOLZB3laSLu7Vhlgt8YbImpA/viewform?embedded=true" width="99%" height="620" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+    </div>
+</section>
 <script src="pdfobject.js"></script>
 <script>PDFObject.embed("CBImath.pdf", "#example1");</script>
 <!--
