@@ -110,7 +110,7 @@ section{
 
 
 #example1, #answers{float:left;}
-.pdfobject-container { height: 820px;width:60%;}
+.pdfobject-container { height: 100%;width:60%;}
 .pdfobject { border: 1px solid #666; }
 #answers{width: 40%;}
 
