@@ -17,6 +17,7 @@ height: 100vh;
 
 /* CSS which you need for blurred box */
 body{
+text-align: center;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
@@ -32,10 +33,12 @@ font-weight: 400;
 }
 
 .blurred-box{
+cursor: pointer;
 float:left;
 margin:1rem;
 position: relative;
 width: 21%;
+max-width: 200px;
 height: 300px;
 top: calc(50% - 175px);
 background: inherit;
@@ -82,16 +85,16 @@ background-size: contain;
 }
 
 #CAD{
-    background-image: url(design.jpeg);
+    background-image: url(images/design.jpeg);
 }
 #CBI{
-    background-image: url(emc__emc2__physics__formula__science__black__board-512.png);
+    background-image: url(images/emc__emc2__physics__formula__science__black__board-512.png);
 }
 #CBS{
-    background-image: url(cbs.png);
+    background-image: url(images/cbs.png);
 }
 #CSH{
-    background-image: url(social-network-icon-2862113_960_720.png);
+    background-image: url(images/social-network-icon-2862113_960_720.png);
 }
 
 .user-name{
@@ -104,7 +107,9 @@ color: white;
 section{
     text-align: center;
     width: 100%;
-    display:inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 2rem;
 }
 
@@ -114,6 +119,17 @@ section{
 .pdfobject { border: 1px solid #666; }
 #answers{width: 40%;}
 
-#navSection{
-display: none;
+
+#content{
+    display: none;
+}
+
+h1{
+    color: white;
+    margin: 5rem 0 3rem 0;
+}
+
+.user-name{
+    max-width: 100%;
+    text-align: center;
 }
