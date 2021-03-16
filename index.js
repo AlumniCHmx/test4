@@ -1,52 +1,39 @@
-var altura=window.innerHeight;
-var maxAlt=altura-25;
+const cajas = document.querySelectorAll('.blurred-box')
+cajas.forEach(function (element) {
+  element.setAttribute('onclick', 'print(this)')
+})
 
-var cajas=document.querySelectorAll('.blurred-box');
-cajas.forEach(function(element) {
-    element.setAttribute('onclick','print(this)')
-});
-
-//  ,
-/*
-    '<iframe id="doc" src="https://docs.google.com/forms/d/e/1FAIpQLSf2mVcd7ZKK6jw5q33uhpmt-jhOLZB3laSLu7Vhlgt8YbImpA/viewform?embedded=true" width="99%" height="820" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>'
-*/
-
-
-var areasArray=[
-    '<iframe id="doc" src="https://docs.google.com/forms/d/e/1FAIpQLSfcD4QbQJF8N9RWkSFfYkmQL09JHAxR60-YnqgZ0VVoGLktgw/viewform?embedded=true" width="99%" height="820" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>',
-    '<iframe id="doc" src="https://docs.google.com/forms/d/e/1FAIpQLSduacefR3VnaNRTTET9Adu_wZ9Khg-ydAzLGzzLuvP0aa6iVA/viewform?embedded=true" width="99%" height="820" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>',
-    '<iframe id="doc" src="https://docs.google.com/forms/d/e/1FAIpQLSeaU0UOnJfK79ZfyhUCUR_xCxxGzLKHXX_miuevDqr5_WMrvw/viewform?embedded=true" width="99%" height="820" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>',
-    '<iframe id="doc" src="https://docs.google.com/forms/d/e/1FAIpQLSeGIdzumInqd_IRKRxu4ZO030rR8xeMPKHex6KU3T8xhJX0GA/viewform?embedded=true" width="99%" height="820" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>'
-]
-
-function print(e){
-    document.getElementsByTagName('h1')[0].style.display='none'
-    document.getElementById("navSection").style.display='none'
-    var tipo =e.getAttribute('data-tipo')
-    var area =e.getAttribute('data-area')
-    
-    document.getElementById("content").style.display='block'
-    var exam= `pdf/Examen UAM ${tipo}.pdf`
-    PDFObject.embed(exam, "#example1");
-    
-    var formulario = document.getElementById("answers")
-
-    formulario.innerHTML=areasArray[area-1]
-
-    document.getElementById("content").style.height=`${maxAlt}px`
-    document.getElementById('doc').setAttribute("height",maxAlt);
-
-    contador();
-
+const areasArray = {
+  1: `<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSevniR3awP-vLNOLdCzr9y5HYcSaW6aBNbBLImquei3erx3-g/viewform?embedded=true" width="99%" height="${window.innerHeight - 25}" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>`,
+  2: `<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScsXbDch8JbAqYYr22RmDd2AsRlzQYhW_wALhf978jvngBXVg/viewform?embedded=true" width="99%" height="${window.innerHeight - 25}" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>`,
+  3: `<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUyEH95Efcr9s9ebJORqoACs3ZdfdMIxpmf0qtcWfCUVCI1w/viewform?embedded=true" width="99%" height="${window.innerHeight - 25}" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>`,
+  4: `<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdj478w4_StG03LtnC0R0a9-tFSfJVJMgyGBI6w20hwkpnuXQ/viewform?embedded=true" width="99%" height="${window.innerHeight - 25}" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>`
 }
 
-function contador(){
-    var later=new Date();
-    later.setHours(later.getHours()+3);
+function print (e) {
+  document.getElementsByTagName('h1')[0].style.display = 'none'
+  document.getElementById('navSection').style.display = 'none'
+  const tipo = e.getAttribute('data-tipo')
+  const area = e.getAttribute('data-area')
 
-    console.log(later)
+  document.getElementById('content').style.display = 'block'
+  const exam = `pdf/examen-muestra-2020-${tipo}.pdf`
+  PDFObject.embed(exam, '#example1')
 
-    $('#clock').countdown(later, function(event) {
-        $(this).html(event.strftime('%H:%M:%S'));
-    });
+  const formulario = document.getElementById('answers')
+  formulario.innerHTML = areasArray[area]
+
+  document.getElementById('content').style.height = `${window.innerHeight - 25}px`
+  contador()
+}
+
+function contador () {
+  const later = new Date()
+  later.setHours(later.getHours() + 3)
+
+  console.log(later)
+
+  $('#clock').countdown(later, function (event) {
+    $(this).html(event.strftime('%H:%M:%S'))
+  })
 }
